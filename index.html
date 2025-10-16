@@ -1,0 +1,725 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Magic ID Card</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f5f5;
+    }
+    .banner {
+      background: linear-gradient(to right, #1aa6b7, #65d6e6);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .banner h1 {
+      font-size: 32px;
+      margin: 0;
+    }
+    .banner p {
+      font-size: 16px;
+      margin-top: 8px;
+    }
+    .section {
+      max-width: 700px;
+      margin: auto;
+      padding: 20px;
+    }
+    .section h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .card .info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .card img {
+      width: 30px;
+      height: 30px;
+    }
+    .card span {
+      font-weight: bold;
+      color: #333;
+    }
+    .card button {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    @media (max-width: 600px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Banner Section -->
+  <div class="banner">
+    <h1>Jansuvidhakart</h1>
+    <p>Your Digital Service Hub</p>
+  </div>
+ 
+
+  <!-- Social Media Section -->
+  <div class="section">
+    <h2>🔗 Connect with Me</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="info">
+          <img src="https://img.icons8.com/color/48/pinterest--v1.png" />
+          <span>Pinterest</span>
+        </div>
+        <button onclick="window.open('https://pinterest.com','_blank')">Open</button>
+      </div>
+      <div class="card">
+        <div class="info">
+          <img src="https://img.icons8.com/color/48/snapchat.png" />
+          <span>Snapchat</span>
+        </div>
+        <button onclick="window.open('https://snapchat.com','_blank')">Open</button>
+      </div>
+      <div class="card">
+        <div class="info">
+          <img src="https://img.icons8.com/color/48/telegram-app.png" />
+          <span>Telegram</span>
+        </div>
+        <button onclick="window.open('https://t.me','_blank')">Open</button>
+      </div>
+      <div class="card">
+        <div class="info">
+          <img src="https://img.icons8.com/color/48/whatsapp.png" />
+          <span>WhatsApp</span>
+        </div>
+        <button onclick="window.open('https://wa.me','_blank')">Open</button>
+      </div>
+      <div class="card">
+        <div class="info">
+          <img src="https://img.icons8.com/color/48/instagram-new.png" />
+          <span>Instagram</span>
+        </div>
+        <button onclick="window.open('https://instagram.com','_blank')">Open</button>
+      </div>
+      <div class="card">
+        <div class="info">
+          <img src="https://img.icons8.com/color/48/facebook-new.png" />
+          <span>Facebook</span>
+        </div>
+        <button onclick="window.open('https://facebook.com','_blank')">Open</button>
+      </div>
+    </div>
+  </div>
+
+  
+  
+<div style="font-family:sans-serif; background:#ffffff; padding:20px; max-width:600px; margin:auto;">
+  <h3 style="text-align:center;">🎬 Watch Free OTT Channels</h3>
+
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px; margin-top:20px;">
+
+    <!-- MX Player -->
+    <div style="display:flex; align-items:center; justify-content:space-between; background:#fff; border-radius:10px; padding:10px; border:1px solid #ccc;">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <img src="https://img.icons8.com/color/48/video-playlist.png" width="30">
+        <span style="font-weight:bold;">MX Player</span>
+      </div>
+      <a href="https://www.mxplayer.in" target="_blank">
+        <button style="background:#007bff; color:#fff; border:none; padding:5px 10px; border-radius:5px;">Open</button>
+      </a>
+    </div>
+
+    <!-- JioCinema -->
+    <div style="display:flex; align-items:center; justify-content:space-between; background:#fff; border-radius:10px; padding:10px; border:1px solid #ccc;">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <img src="https://img.icons8.com/color/48/play-button-circled.png" width="30">
+        <span style="font-weight:bold;">JioCinema</span>
+      </div>
+      <a href="https://www.jiocinema.com" target="_blank">
+        <button style="background:#007bff; color:#fff; border:none; padding:5px 10px; border-radius:5px;">Open</button>
+      </a>
+    </div>
+
+    <!-- YouTube -->
+    <div style="display:flex; align-items:center; justify-content:space-between; background:#fff; border-radius:10px; padding:10px; border:1px solid #ccc;">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <img src="https://img.icons8.com/color/48/youtube-play.png" width="30">
+        <span style="font-weight:bold;">YouTube</span>
+      </div>
+      <a href="https://www.youtube.com/@channelname" target="_blank">
+        <button style="background:#007bff; color:#fff; border:none; padding:5px 10px; border-radius:5px;">Open</button>
+      </a>
+    </div>
+
+    <!-- Zee5 Free -->
+    <div style="display:flex; align-items:center; justify-content:space-between; background:#fff; border-radius:10px; padding:10px; border:1px solid #ccc;">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <img src="https://img.icons8.com/color/48/tv.png" width="30">
+        <span style="font-weight:bold;">Zee5 Free</span>
+      </div>
+      <a href="https://www.zee5.com/movies/free" target="_blank">
+        <button style="background:#007bff; color:#fff; border:none; padding:5px 10px; border-radius:5px;">Open</button>
+      </a>
+    </div>
+
+    <!-- Netflix -->
+    <div style="display:flex; align-items:center; justify-content:space-between; background:#fff; border-radius:10px; padding:10px; border:1px solid #ccc;">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <img src="https://img.icons8.com/color/48/netflix-desktop-app.png" width="30">
+        <span style="font-weight:bold;">Netflix</span>
+      </div>
+      <a href="https://www.netflix.com/in/browse" target="_blank">
+        <button style="background:#007bff; color:#fff; border:none; padding:5px 10px; border-radius:5px;">Open</button>
+      </a>
+    </div>
+
+    <!-- Hotstar -->
+    <div style="display:flex; align-items:center; justify-content:space-between; background:#fff; border-radius:10px; padding:10px; border:1px solid #ccc;">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <img src="https://img.icons8.com/color/48/disney-plus.png" width="30">
+        <span style="font-weight:bold;">Hotstar</span>
+      </div>
+      <a href="https://www.hotstar.com/in" target="_blank">
+        <button style="background:#007bff; color:#fff; border:none; padding:5px 10px; border-radius:5px;">Open</button>
+      </a>
+    </div>
+
+    <!-- SonyLiv -->
+    <div style="display:flex; align-items:center; justify-content:space-between; background:#fff; border-radius:10px; padding:10px; border:1px solid #ccc;">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <img src="https://img.icons8.com/color/48/sony.png" width="30">
+        <span style="font-weight:bold;">SonyLiv</span>
+      </div>
+      <a href="https://www.sonyliv.com" target="_blank">
+        <button style="background:#007bff; color:#fff; border:none; padding:5px 10px; border-radius:5px;">Open</button>
+      </a>
+    </div>
+
+    <!-- Prime Video -->
+    <div style="display:flex; align-items:center; justify-content:space-between; background:#fff; border-radius:10px; padding:10px; border:1px solid #ccc;">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <img src="https://img.icons8.com/color/48/amazon-prime-video.png" width="30">
+        <span style="font-weight:bold;">Prime Video</span>
+      </div>
+      <a href="https://www.primevideo.com" target="_blank">
+        <button style="background:#007bff; color:#fff; border:none; padding:5px 10px; border-radius:5px;">Open</button>
+      </a>
+    </div>
+
+    <!-- ALTBalaji -->
+    <div style="display:flex; align-items:center; justify-content:space-between; background:#fff; border-radius:10px; padding:10px; border:1px solid #ccc;">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <img src="https://img.icons8.com/color/48/alt.png" width="30">
+        <span style="font-weight:bold;">ALTBalaji</span>
+      </div>
+      <a href="https://www.altbalaji.com" target="_blank">
+        <button style="background:#007bff; color:#fff; border:none; padding:5px 10px; border-radius:5px;">Open</button>
+      </a>
+    </div>
+
+    <!-- Discovery+ -->
+    <div style="display:flex; align-items:center; justify-content:space-between; background:#fff; border-radius:10px; padding:10px; border:1px solid #ccc;">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <img src="https://img.icons8.com/color/48/discovery-channel.png" width="30">
+        <span style="font-weight:bold;">Discovery+</span>
+      </div>
+      <a href="https://www.discoveryplus.in" target="_blank">
+        <button style="background:#007bff; color:#fff; border:none; padding:5px 10px; border-radius:5px;">Open</button>
+      </a>
+    </div>
+
+  </div>
+</div>
+ <div style="font-family:sans-serif; background:#ffffff; padding:20px; max-width:600px; margin:auto;">
+  <h3 style="text-align:center;">🛍️ Shop from Top Apps</h3>
+
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px; margin-top:20px;">
+
+    <!-- Amazon -->
+    <div style="display:flex; align-items:center; justify-content:space-between; background:#fff; border-radius:10px; padding:10px; border:1px solid #ccc;">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <img src="https://img.icons8.com/color/48/amazon.png" width="30">
+        <span style="font-weight:bold;">Amazon</span>
+      </div>
+      <a href="https://www.amazon.in" target="_blank">
+        <button style="background:#ff9900; color:#fff; border:none; padding:5px 10px; border-radius:5px;">Shop</button>
+      </a>
+    </div>
+
+    <!-- Flipkart -->
+    <div style="display:flex; align-items:center; justify-content:space-between; background:#fff; border-radius:10px; padding:10px; border:1px solid #ccc;">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <img src="https://img.icons8.com/color/48/flipkart.png" width="30">
+        <span style="font-weight:bold;">Flipkart</span>
+      </div>
+      <a href="https://www.flipkart.com" target="_blank">
+        <button style="background:#007bff; color:#fff; border:none; padding:5px 10px; border-radius:5px;">Shop</button>
+      </a>
+    </div>
+
+    <!-- Meesho -->
+    <div style="display:flex; align-items:center; justify-content:space-between; background:#fff; border-radius:10px; padding:10px; border:1px solid #ccc;">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <img src="https://img.icons8.com/color/48/meesho.png" width="30">
+        <span style="font-weight:bold;">Meesho</span>
+      </div>
+      <a href="https://www.meesho.com" target="_blank">
+        <button style="background:#e91e63; color:#fff; border:none; padding:5px 10px; border-radius:5px;">Shop</button>
+      </a>
+    </div>
+
+    <!-- Myntra -->
+    <div style="display:flex; align-items:center; justify-content:space-between; background:#fff; border-radius:10px; padding:10px; border:1px solid #ccc;">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <img src="https://img.icons8.com/color/48/myntra.png" width="30">
+        <span style="font-weight:bold;">Myntra</span>
+      </div>
+      <a href="https://www.myntra.com" target="_blank">
+        <button style="background:#ff3e3e; color:#fff; border:none; padding:5px 10px; border-radius:5px;">Shop</button>
+      </a>
+    </div>
+
+    <!-- Snapdeal -->
+    <div style="display:flex; align-items:center; justify-content:space-between; background:#fff; border-radius:10px; padding:10px; border:1px solid #ccc;">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <img src="https://img.icons8.com/color/48/snapdeal.png" width="30">
+        <span style="font-weight:bold;">Snapdeal</span>
+      </div>
+      <a href="https://www.snapdeal.com" target="_blank">
+        <button style="background:#d32f2f; color:#fff; border:none; padding:5px 10px; border-radius:5px;">Shop</button>
+      </a>
+    </div>
+
+    <!-- AJIO -->
+    <div style="display:flex; align-items:center; justify-content:space-between; background:#fff; border-radius:10px; padding:10px; border:1px solid #ccc;">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <img src="https://img.icons8.com/color/48/ajio.png" width="30">
+        <span style="font-weight:bold;">AJIO</span>
+      </div>
+      <a href="https://www.ajio.com" target="_blank">
+        <button style="background:#37474f; color:#fff; border:none; padding:5px 10px; border-radius:5px;">Shop</button>
+      </a>
+    </div>
+
+    <!-- AliExpress -->
+    <div style="display:flex; align-items:center; justify-content:space-between; background:#fff; border-radius:10px; padding:10px; border:1px solid #ccc;">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <img src="https://img.icons8.com/color/48/aliexpress.png" width="30">
+        <span style="font-weight:bold;">AliExpress</span>
+      </div>
+      <a href="https://www.aliexpress.com" target="_blank">
+        <button style="background:#ff5722; color:#fff; border:none; padding:5px 10px; border-radius:5px;">Shop</button>
+      </a>
+    </div>
+
+    <!-- Paytm Mall -->
+    <div style="display:flex; align-items:center; justify-content:space-between; background:#fff; border-radius:10px; padding:10px; border:1px solid #ccc;">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <img src="https://img.icons8.com/color/48/paytm.png" width="30">
+        <span style="font-weight:bold;">Paytm Mall</span>
+      </div>
+      <a href="https://paytmmall.com" target="_blank">
+        <button style="background:#039be5; color:#fff; border:none; padding:5px 10px; border-radius:5px;">Shop</button>
+      </a>
+    </div>
+  </div>
+ </div>
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Services Dashboard</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 25px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      padding: 15px;
+      transition: transform 0.2s ease;
+    }
+    .card:hover { transform: scale(1.03); }
+    .icon {
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 30px;
+      margin: auto;
+    }
+    .title { margin-top: 10px; font-weight: bold; color: #222; cursor: pointer; }
+    .subtitle { color: #777; font-size: 13px; margin-bottom: 8px; }
+    .subcategories {
+      display: none;
+      margin-top: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+    }
+    .subcategories.show { display: flex; }
+    .sub-btn {
+      background: #ececec;
+      border: none;
+      border-radius: 20px;
+      padding: 6px 12px;
+      cursor: pointer;
+      font-size: 12px;
+      transition: 0.2s;
+    }
+    .sub-btn:hover { background: #ccc; }
+  </style>
+</head>
+<body>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Jan Seva Kendra | Jansuvidhakart Master Portal</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #ffffff;
+    }
+
+    h2 {
+      text-align: center;
+      padding: 12px;
+      background: #004aad;
+      color: white;
+      margin: 0;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
+
+    .category {
+      text-align: center;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .category:hover {
+      transform: scale(1.05);
+    }
+
+    .category-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 32px;
+      margin: auto;
+    }
+
+    .category-label {
+      margin-top: 8px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    .modal-header {
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .subcategory-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .subcategory {
+      background: #e3f2fd;
+      padding: 10px;
+      border-radius: 8px;
+      text-align: center;
+      cursor: pointer;
+      font-size: 13px;
+      transition: 0.3s;
+    }
+
+    .subcategory:hover {
+      background: #bbdefb;
+    }
+
+    .close-btn {
+      float: right;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    /* ===== Affiliate Section ===== */
+    .affiliate-section {
+      background: #ffffff;
+      margin-top: 40px;
+      padding: 30px 10px;
+      border-top: 3px solid #004aad;
+    }
+
+    .affiliate-card {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      padding: 25px;
+      text-align: center;
+    }
+
+    .affiliate-card h3 {
+      color: #004aad;
+      margin-bottom: 10px;
+    }
+
+    .affiliate-card p {
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    iframe.affiliate-form {
+      width: 100%;
+      height: 850px;
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .whatsapp-block {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .whatsapp-block a {
+      display: inline-block;
+      background: #25D366;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .whatsapp-block a:hover {
+      background: #1DA851;
+    }
+
+    footer {
+      text-align: center;
+      color: #555;
+      margin: 30px 0;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>🧩 Jan Seva Kendra | Jansuvidhakart Master Services</h2>
+
+  <div class="category-grid" id="categoryGrid"></div>
+
+  <!-- Modal -->
+  <div class="modal" id="categoryModal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">✖</span>
+      <div class="modal-header" id="modalTitle">Category</div>
+      <div class="subcategory-list" id="subcategoryList"></div>
+    </div>
+  </div>
+
+  <!-- ✅ Affiliate Registration Section -->
+  <section class="affiliate-section">
+    <div class="affiliate-card">
+      <div class="logo" style="font-size:28px;font-weight:700;color:#004aad;">
+        🌐 Jansuvidhakart Affiliate Program
+      </div>
+      <p>हम डिजिटल इंडिया की दिशा में लोगों को ऑनलाइन सेवाओं से जोड़ते हैं। नीचे दिया गया फॉर्म भरें और हमारे साथ जुड़ें Affiliate Partner बनकर!</p>
+
+      <iframe
+        class="affiliate-form"
+        src="https://forms.zohopublic.in/supportjansuvi1/form/DigitalmagiccardAffiliates/formperma/PhWDgt2-uubUr82epEgSxA2aRFVLFNfIpWtAdmwxrI0"
+        allowfullscreen>
+      </iframe>
+
+      <div class="whatsapp-block">
+        <p>💬 Payment done? Send screenshot to WhatsApp:</p>
+        <a
+          href="https://wa.me/+91-9988942833?text=Hi%20Jansuvidhakart%2C%20I%20have%20completed%20the%20payment.%20Here%20is%20my%20screenshot."
+          target="_blank">
+          <i class="fab fa-whatsapp"></i> Send Screenshot
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>© 2025 Jan Seva Kendra | Jansuvidhakart | All Rights Reserved</footer>
+
+  <script>
+    const categories = {
+      "🏛️ Government Services": ["Aadhaar Update", "PAN Card", "Voter ID", "Passport", "Birth Certificate"],
+      "💰 Financial Services": ["Bank Account", "AEPS Withdrawal", "Insurance", "Loan Apply", "Mutual Funds"],
+      "🧑‍🎓 Education & Exams": ["Online Forms", "Scholarship", "Results", "Training", "NIELIT"],
+      "🏥 Health Services": ["Ayushman Card", "Health Insurance", "Telemedicine", "COVID Certificate", "Doctor Booking"],
+      "🚜 Agriculture Services": ["PM Kisan", "Soil Card", "Fertilizer Booking", "KCC Apply", "Crop Insurance"],
+      "🧾 Legal & Documentation": ["Affidavit", "Notary", "GST", "Company Registration", "Trademark"],
+      "🧑‍💻 Digital Services": ["UPI Setup", "Mini Website", "Digital Card", "QR Code", "Business WhatsApp"],
+      "💼 Employment": ["Job Alerts", "Resume Creation", "Private Jobs", "Govt Jobs", "Apprenticeship"],
+      "📄 Certificates": ["Caste", "Income", "Residence", "Character", "Domicile"],
+      "🚗 Transport": ["License", "Vehicle RC", "PUC", "Insurance", "Fastag"],
+      "🏠 Property Services": ["Land Record", "Registry Info", "E-Stamp", "Mutation", "Plot Verification"],
+      "🛍️ E-Commerce Setup": ["Shop Registration", "GST Apply", "Catalog Setup", "Google Business", "Payment Link"],
+      "📱 Mobile Recharge": ["Prepaid Recharge", "DTH", "Postpaid", "FASTag Recharge", "Utility Bills"],
+      "🖨️ Printing & Design": ["ID Card", "Visiting Card", "Brochure", "Photo Print", "Certificate Print"],
+      "💡 Electricity Services": ["Bill Payment", "New Connection", "Subsidy Apply", "Meter Reading", "Complaint"],
+      "🏫 Admission & Coaching": ["School Admission", "College Apply", "Online Courses", "Career Counseling", "Exam Coaching"],
+      "🌐 IT Support": ["Website Help", "Hosting Setup", "Email Setup", "Google Drive", "Cyber Security"],
+      "💼 Business Registration": ["MSME", "Startup India", "Import Export", "FSSAI", "CA Support"],
+      "🧠 AI & Automation": ["AI Tools Access", "Chatbot Setup", "AI Website", "Automation", "Voice Assistant"],
+      "📢 Marketing & Social Media": ["YouTube Setup", "Facebook Ads", "Instagram Growth", "Google Ads", "Poster Creation"]
+    };
+
+    const categoryGrid = document.getElementById("categoryGrid");
+
+    Object.keys(categories).forEach((cat, i) => {
+      const div = document.createElement("div");
+      div.className = "category";
+      div.innerHTML = `
+        <div class="category-icon" style="background-color:${getColor(i)};">
+          ${cat.split(" ")[0]}
+        </div>
+        <div class="category-label">${cat}</div>`;
+      div.onclick = () => openModal(cat);
+      categoryGrid.appendChild(div);
+    });
+
+    function openModal(cat) {
+      document.getElementById("modalTitle").innerText = cat;
+      const list = document.getElementById("subcategoryList");
+      list.innerHTML = "";
+      categories[cat].forEach((sub) => {
+        const div = document.createElement("div");
+        div.className = "subcategory";
+        div.innerText = sub;
+        div.onclick = () => alert(`Selected: ${sub}`);
+        list.appendChild(div);
+      });
+      document.getElementById("categoryModal").style.display = "flex";
+    }
+
+    function closeModal() {
+      document.getElementById("categoryModal").style.display = "none";
+    }
+
+    function getColor(i) {
+      const colors = [
+        "#f44336",
+        "#9c27b0",
+        "#3f51b5",
+        "#2196f3",
+        "#009688",
+        "#4caf50",
+        "#ff9800",
+        "#795548",
+        "#607d8b",
+        "#e91e63",
+        "#6a1b9a",
+        "#2e7d32",
+        "#1976d2",
+        "#c2185b",
+        "#ff5722",
+        "#8bc34a",
+        "#03a9f4",
+        "#ad1457",
+        "#5d4037",
+        "#7b1fa2"
+      ];
+      return colors[i % colors.length];
+    }
+  </script>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+        
