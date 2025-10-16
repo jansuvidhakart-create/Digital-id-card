@@ -350,6 +350,262 @@
   </div>
  </div>
 
+All ai
+
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Services Dashboard</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 25px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      padding: 15px;
+      transition: transform 0.2s ease;
+    }
+    .card:hover { transform: scale(1.03); }
+    .icon {
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 30px;
+      margin: auto;
+    }
+    .title { margin-top: 10px; font-weight: bold; color: #222; cursor: pointer; }
+    .subtitle { color: #777; font-size: 13px; margin-bottom: 8px; }
+    .subcategories {
+      display: none;
+      margin-top: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+    }
+    .subcategories.show { display: flex; }
+    .sub-btn {
+      background: #ececec;
+      border: none;
+      border-radius: 20px;
+      padding: 6px 12px;
+      cursor: pointer;
+      font-size: 12px;
+      transition: 0.2s;
+    }
+    .sub-btn:hover { background: #ccc; }
+  </style>
+</head>
+<body>
+
+<h2>🤖 AI Services Dashboard (2025)</h2>
+<div class="grid" id="aiGrid"></div>
+
+<script>
+const aiCategories = [
+  { icon:"🧠", color:"#4caf50", title:"AI Agents", sub:"एआई एजेंट्स", subs:[
+    {name:"ChatGPT", link:"https://chat.openai.com"},
+    {name:"AgentGPT", link:"https://agentgpt.reworkd.ai"},
+    {name:"AutoGPT", link:"https://autogpt.net"},
+    {name:"Taskade AI", link:"https://www.taskade.com"},
+    {name:"FlowGPT", link:"https://flowgpt.com"}
+  ]},
+  { icon:"🎨", color:"#e91e63", title:"Creative AI", sub:"क्रिएटिव एआई", subs:[
+    {name:"Canva AI", link:"https://www.canva.com/ai-image-generator"},
+    {name:"Runway ML", link:"https://runwayml.com"},
+    {name:"Pika Labs", link:"https://pika.art"},
+    {name:"Soundraw", link:"https://soundraw.io"},
+    {name:"Kaiber AI", link:"https://www.kaiber.ai"}
+  ]},
+  { icon:"💬", color:"#2196f3", title:"Conversational AI", sub:"संवादी एआई", subs:[
+    {name:"Perplexity AI", link:"https://www.perplexity.ai"},
+    {name:"Pi AI", link:"https://pi.ai"},
+    {name:"Claude 3", link:"https://claude.ai"},
+    {name:"Character AI", link:"https://character.ai"},
+    {name:"Chatsonic", link:"https://writesonic.com/chat"}
+  ]},
+  { icon:"💻", color:"#3f51b5", title:"Coding AI", sub:"कोडिंग एआई", subs:[
+    {name:"GitHub Copilot", link:"https://github.com/features/copilot"},
+    {name:"Cursor AI", link:"https://cursor.sh"},
+    {name:"Replit Ghostwriter", link:"https://replit.com"},
+    {name:"Codeium", link:"https://codeium.com"},
+    {name:"Tabnine", link:"https://www.tabnine.com"}
+  ]},
+  { icon:"📚", color:"#9c27b0", title:"Education AI", sub:"शिक्षा एआई", subs:[
+    {name:"Quizgecko", link:"https://quizgecko.com"},
+    {name:"Socratic", link:"https://socratic.org"},
+    {name:"Duolingo Max", link:"https://duolingo.com"},
+    {name:"Explainpaper", link:"https://www.explainpaper.com"},
+    {name:"StudyMonkey", link:"https://studymonkey.ai"}
+  ]},
+  { icon:"📰", color:"#ff9800", title:"Content AI", sub:"कंटेंट एआई", subs:[
+    {name:"Writesonic", link:"https://writesonic.com"},
+    {name:"Jasper AI", link:"https://www.jasper.ai"},
+    {name:"Copy AI", link:"https://www.copy.ai"},
+    {name:"Rytr", link:"https://rytr.me"},
+    {name:"Hypotenuse", link:"https://www.hypotenuse.ai"}
+  ]},
+  { icon:"📷", color:"#00bcd4", title:"Image AI", sub:"इमेज एआई", subs:[
+    {name:"Midjourney", link:"https://www.midjourney.com"},
+    {name:"Leonardo AI", link:"https://leonardo.ai"},
+    {name:"Firefly", link:"https://firefly.adobe.com"},
+    {name:"Bing Image Creator", link:"https://www.bing.com/create"},
+    {name:"BlueWillow", link:"https://bluewillow.ai"}
+  ]},
+  { icon:"🎬", color:"#ff5722", title:"Video AI", sub:"वीडियो एआई", subs:[
+    {name:"Runway", link:"https://runwayml.com"},
+    {name:"Synthesia", link:"https://www.synthesia.io"},
+    {name:"HeyGen", link:"https://www.heygen.com"},
+    {name:"Pictory", link:"https://pictory.ai"},
+    {name:"Lumen5", link:"https://lumen5.com"}
+  ]},
+  { icon:"🎧", color:"#009688", title:"Audio & Voice AI", sub:"ऑडियो एआई", subs:[
+    {name:"ElevenLabs", link:"https://elevenlabs.io"},
+    {name:"Play.ht", link:"https://play.ht"},
+    {name:"Uberduck", link:"https://uberduck.ai"},
+    {name:"Descript", link:"https://www.descript.com"},
+    {name:"Murf AI", link:"https://murf.ai"}
+  ]},
+  { icon:"🧩", color:"#795548", title:"Multimodal AI", sub:"मल्टीमॉडल एआई", subs:[
+    {name:"Gemini", link:"https://gemini.google.com"},
+    {name:"GPT-4 Turbo", link:"https://chat.openai.com"},
+    {name:"Claude 3 Opus", link:"https://claude.ai"},
+    {name:"Perplexity Pro", link:"https://www.perplexity.ai"},
+    {name:"Mistral", link:"https://mistral.ai"}
+  ]},
+  { icon:"🏥", color:"#e91e63", title:"Healthcare AI", sub:"हेल्थकेयर एआई", subs:[
+    {name:"Glass Health", link:"https://glass.health"},
+    {name:"Abridge", link:"https://abridge.com"},
+    {name:"Lunit", link:"https://www.lunit.io"},
+    {name:"DeepMind Health", link:"https://deepmind.google"},
+    {name:"BioGPT", link:"https://huggingface.co/microsoft/BioGPT"}
+  ]},
+  { icon:"🧮", color:"#607d8b", title:"Data & Analytics AI", sub:"डेटा विश्लेषण एआई", subs:[
+    {name:"ChatGPT Data Analyst", link:"https://chat.openai.com"},
+    {name:"Dataiku", link:"https://www.dataiku.com"},
+    {name:"Akkio", link:"https://www.akkio.com"},
+    {name:"Obviously AI", link:"https://www.obviously.ai"},
+    {name:"Google Vertex", link:"https://cloud.google.com/vertex-ai"}
+  ]},
+  { icon:"🛍️", color:"#9c27b0", title:"E-Commerce AI", sub:"ई-कॉमर्स एआई", subs:[
+    {name:"Shopify Magic", link:"https://www.shopify.com/magic"},
+    {name:"Vue.ai", link:"https://vue.ai"},
+    {name:"Clerk.io", link:"https://clerk.io"},
+    {name:"Fermat", link:"https://fermat.ai"},
+    {name:"Klevu", link:"https://www.klevu.com"}
+  ]},
+  { icon:"🚗", color:"#3f51b5", title:"Automotive AI", sub:"ऑटोमोटिव एआई", subs:[
+    {name:"Tesla FSD", link:"https://www.tesla.com/AI"},
+    {name:"Comma AI", link:"https://comma.ai"},
+    {name:"Wayve AI", link:"https://wayve.ai"},
+    {name:"Cruise", link:"https://getcruise.com"},
+    {name:"Aptiv", link:"https://www.aptiv.com"}
+  ]},
+  { icon:"⚙️", color:"#607d8b", title:"Automation AI", sub:"ऑटोमेशन एआई", subs:[
+    {name:"Zapier AI", link:"https://zapier.com"},
+    {name:"Make (Integromat)", link:"https://www.make.com"},
+    {name:"Bardeen", link:"https://www.bardeen.ai"},
+    {name:"N8N", link:"https://n8n.io"},
+    {name:"Pipedream", link:"https://pipedream.com"}
+  ]},
+  { icon:"💼", color:"#795548", title:"Business AI", sub:"बिजनेस एआई", subs:[
+    {name:"Fireflies AI", link:"https://fireflies.ai"},
+    {name:"Beautiful AI", link:"https://www.beautiful.ai"},
+    {name:"Decktopus", link:"https://www.decktopus.com"},
+    {name:"ClickUp AI", link:"https://clickup.com"},
+    {name:"Notion AI", link:"https://notion.so"}
+  ]},
+  { icon:"🎯", color:"#9e9e9e", title:"Marketing AI", sub:"मार्केटिंग एआई", subs:[
+    {name:"AdCreative.ai", link:"https://adcreative.ai"},
+    {name:"Ocoya", link:"https://www.ocoya.com"},
+    {name:"CopyMonkey", link:"https://copymonkey.ai"},
+    {name:"Creaitor AI", link:"https://creaitor.ai"},
+    {name:"Flick AI", link:"https://www.flick.tech"}
+  ]},
+  { icon:"🔍", color:"#ff9800", title:"Search & Research AI", sub:"सर्च एआई", subs:[
+    {name:"Perplexity", link:"https://www.perplexity.ai"},
+    {name:"You.com", link:"https://you.com"},
+    {name:"Phind", link:"https://www.phind.com"},
+    {name:"Andi Search", link:"https://andisearch.com"},
+    {name:"Komodo", link:"https://komodo.ai"}
+  ]},
+  { icon:"🔐", color:"#607d8b", title:"Security AI", sub:"सिक्योरिटी एआई", subs:[
+    {name:"Darktrace", link:"https://darktrace.com"},
+    {name:"CrowdStrike", link:"https://www.crowdstrike.com"},
+    {name:"Defender Copilot", link:"https://microsoft.com/security"},
+    {name:"Vectra AI", link:"https://vectra.ai"},
+    {name:"Cylance", link:"https://www.blackberry.com/us/en/products/cylance"}
+  ]},
+  { icon:"🌐", color:"#00bcd4", title:"Web & SEO AI", sub:"वेब एआई", subs:[
+    {name:"Surfer SEO", link:"https://surferseo.com"},
+    {name:"NeuronWriter", link:"https://neuronwriter.com"},
+    {name:"Frase.io", link:"https://frase.io"},
+    {name:"Scalenut", link:"https://www.scalenut.com"},
+    {name:"Outranking", link:"https://outranking.io"}
+  ]}
+];
+
+const grid = document.getElementById("aiGrid");
+
+aiCategories.forEach((cat, i) => {
+  const card = document.createElement("div");
+  card.className = "card";
+  card.innerHTML = `
+    <div class="icon" style="background:${cat.color}">${cat.icon}</div>
+    <div class="title">${cat.title}</div>
+    <div class="subtitle">${cat.sub}</div>
+    <div class="subcategories" id="subs-${i}">
+      ${cat.subs.map(sub=>`<button class="sub-btn" data-link="${sub.link}">${sub.name}</button>`).join('')}
+    </div>
+  `;
+
+  // Toggle parent category
+  card.querySelector(".title").addEventListener("click",()=>{
+    document.querySelectorAll(".subcategories").forEach(s=>{
+      if(s.id!==`subs-${i}`) s.classList.remove("show");
+    });
+    document.getElementById(`subs-${i}`).classList.toggle("show");
+  });
+
+  // Open each subcategory
+  card.querySelectorAll(".sub-btn").forEach(btn=>{
+    btn.addEventListener("click",(e)=>{
+      e.stopPropagation();
+      const url = e.target.getAttribute("data-link");
+      window.open(url,"_blank");
+    });
+  });
+
+  grid.appendChild(card);
+});
+</script>
+</body>
+</html>
+
+
+  
 <!DOCTYPE html>
 <html lang="hi">
 <head>
