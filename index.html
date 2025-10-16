@@ -351,7 +351,6 @@
 
 
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -361,7 +360,7 @@
     body {
       font-family: sans-serif;
       margin: 0;
-      background: #ffffff; /* ✅ Background white कर दिया */
+      background: #ffffff;
     }
     h2 {
       text-align: center;
@@ -381,7 +380,6 @@
       width: 64px;
       height: 64px;
       border-radius: 50%;
-      background-color: #2196f3;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -431,6 +429,61 @@
       cursor: pointer;
       font-size: 18px;
     }
+
+    /* ===== Affiliate Section ===== */
+    .affiliate-section {
+      background: #ffffff;
+      margin-top: 40px;
+      padding: 30px 10px;
+      border-top: 3px solid #2196f3;
+    }
+
+    .affiliate-card {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      padding: 25px;
+      text-align: center;
+    }
+
+    .affiliate-card h3 {
+      color: #004aad;
+      margin-bottom: 10px;
+    }
+
+    .affiliate-card p {
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    iframe.affiliate-form {
+      width: 100%;
+      height: 850px;
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .whatsapp-block {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .whatsapp-block a {
+      display: inline-block;
+      background: #25D366;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .whatsapp-block a:hover {
+      background: #1DA851;
+    }
   </style>
 </head>
 <body>
@@ -451,6 +504,29 @@
     </div>
   </div>
 </div>
+
+<!-- ✅ Affiliate Registration Section -->
+<section class="affiliate-section">
+  <div class="affiliate-card">
+    <div class="logo" style="font-size:28px;font-weight:700;color:#004aad;">
+      🌐 Jansuvidhakart Affiliate Program
+    </div>
+    <p>हम डिजिटल इंडिया की दिशा में लोगों को ऑनलाइन सेवाओं से जोड़ते हैं। नीचे दिया गया फॉर्म भरें और हमारे साथ जुड़ें Affiliate Partner बनकर!</p>
+
+    <iframe
+      class="affiliate-form"
+      src="https://forms.zohopublic.in/supportjansuvi1/form/DigitalmagiccardAffiliates/formperma/PhWDgt2-uubUr82epEgSxA2aRFVLFNfIpWtAdmwxrI0"
+      allowfullscreen>
+    </iframe>
+
+    <div class="whatsapp-block">
+      <p>💬 Payment done? Send screenshot to WhatsApp:</p>
+      <a href="https://wa.me/+91-9988942833?text=Hi%20Jansuvidhakart%2C%20I%20have%20completed%20the%20payment.%20Here%20is%20my%20screenshot." target="_blank">
+        <i class="fab fa-whatsapp"></i> Send Screenshot
+      </a>
+    </div>
+  </div>
+</section>
 
 <script>
   const categories = {
@@ -518,259 +594,9 @@
   }
 </script>
 
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
 
-
-
-    
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Services Dashboard</title>
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #f9f9f9;
-      margin: 0;
-      padding: 20px;
-    }
-    h2 {
-      text-align: center;
-      color: #333;
-      margin-bottom: 25px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-      text-align: center;
-      padding: 15px;
-      transition: transform 0.2s ease;
-    }
-    .card:hover { transform: scale(1.03); }
-    .icon {
-      width: 65px;
-      height: 65px;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      font-size: 30px;
-      margin: auto;
-    }
-    .title { margin-top: 10px; font-weight: bold; color: #222; cursor: pointer; }
-    .subtitle { color: #777; font-size: 13px; margin-bottom: 8px; }
-    .subcategories {
-      display: none;
-      margin-top: 10px;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 6px;
-    }
-    .subcategories.show { display: flex; }
-    .sub-btn {
-      background: #ececec;
-      border: none;
-      border-radius: 20px;
-      padding: 6px 12px;
-      cursor: pointer;
-      font-size: 12px;
-      transition: 0.2s;
-    }
-    .sub-btn:hover { background: #ccc; }
-  </style>
-</head>
-<body>
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Jan Seva Kendra | Jansuvidhakart Master Portal</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      background: #ffffff;
-    }
-
-    h2 {
-      text-align: center;
-      padding: 12px;
-      background: #004aad;
-      color: white;
-      margin: 0;
-    }
-
-    .category-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 15px;
-      padding: 20px;
-    }
-
-    .category {
-      text-align: center;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .category:hover {
-      transform: scale(1.05);
-    }
-
-    .category-icon {
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 32px;
-      margin: auto;
-    }
-
-    .category-label {
-      margin-top: 8px;
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    /* Modal */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      justify-content: center;
-      align-items: center;
-      z-index: 999;
-    }
-
-    .modal-content {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      width: 90%;
-      max-width: 400px;
-    }
-
-    .modal-header {
-      font-weight: bold;
-      font-size: 18px;
-      margin-bottom: 10px;
-      color: #333;
-    }
-
-    .subcategory-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-    }
-
-    .subcategory {
-      background: #e3f2fd;
-      padding: 10px;
-      border-radius: 8px;
-      text-align: center;
-      cursor: pointer;
-      font-size: 13px;
-      transition: 0.3s;
-    }
-
-    .subcategory:hover {
-      background: #bbdefb;
-    }
-
-    .close-btn {
-      float: right;
-      cursor: pointer;
-      font-size: 18px;
-    }
-
-    /* ===== Affiliate Section ===== */
-    .affiliate-section {
-      background: #ffffff;
-      margin-top: 40px;
-      padding: 30px 10px;
-      border-top: 3px solid #004aad;
-    }
-
-    .affiliate-card {
-      max-width: 800px;
-      margin: auto;
-      background: #fff;
-      border-radius: 20px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-      padding: 25px;
-      text-align: center;
-    }
-
-    .affiliate-card h3 {
-      color: #004aad;
-      margin-bottom: 10px;
-    }
-
-    .affiliate-card p {
-      color: #555;
-      margin-bottom: 20px;
-    }
-
-    iframe.affiliate-form {
-      width: 100%;
-      height: 850px;
-      border: none;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .whatsapp-block {
-      margin-top: 20px;
-      text-align: center;
-    }
-
-    .whatsapp-block a {
-      display: inline-block;
-      background: #25D366;
-      color: white;
-      padding: 12px 28px;
-      border-radius: 8px;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .whatsapp-block a:hover {
-      background: #1DA851;
-    }
-
-    footer {
-      text-align: center;
-      color: #555;
-      margin: 30px 0;
-      font-size: 14px;
-    }
-  </style>
-</head>
-<body>
-</a>
-</div>
-</div>
-
   
-
       
