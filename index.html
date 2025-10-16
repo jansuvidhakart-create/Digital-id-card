@@ -352,12 +352,178 @@
 
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Digital Magic Card</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: #ffffff; /* ✅ Background white कर दिया */
+    }
+    h2 {
+      text-align: center;
+      padding: 10px;
+    }
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      padding: 20px;
+    }
+    .category {
+      text-align: center;
+      cursor: pointer;
+    }
+    .category-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background-color: #2196f3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 28px;
+      margin: auto;
+    }
+    .category-label {
+      margin-top: 8px;
+      font-size: 13px;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+    .modal-content {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+    }
+    .modal-header {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .subcategory-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    .subcategory {
+      background: #e0f7fa;
+      padding: 10px;
+      border-radius: 8px;
+      text-align: center;
+      cursor: pointer;
+    }
+    .close-btn {
+      float: right;
+      cursor: pointer;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
 
-      
+<h2>🧿 Select a Category</h2>
+
+<div class="category-grid" id="categoryGrid">
+  <!-- Categories will be injected here -->
+</div>
+
+<!-- Modal -->
+<div class="modal" id="categoryModal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">✖</span>
+    <div class="modal-header" id="modalTitle">Category</div>
+    <div class="subcategory-list" id="subcategoryList">
+      <!-- Subcategories will be injected here -->
+    </div>
+  </div>
+</div>
+
+<script>
+  const categories = {
+    "Retail & Wholesale": ["किराना स्टोर", "फैशन रिटेल", "गिफ्ट शॉप", "डिस्ट्रीब्यूटर", "बेवरेज आउटलेट"],
+    "Manufacturing & Production": ["फैक्ट्री यूनिट", "मशीन असेंबली", "पैकिंग यूनिट", "वर्कशॉप", "प्रोडक्शन लाइन"],
+    "Food & Beverage": ["रेस्टोरेंट", "कैफे", "फूड डिलीवरी", "बेकरी", "जूस सेंटर"],
+    "Education & Training": ["कोचिंग सेंटर", "ऑनलाइन कोर्स", "स्कूल/कॉलेज", "स्किल ट्रेनिंग", "करियर काउंसलिंग"],
+    "Health & Wellness": ["क्लिनिक", "योग सेंटर", "फार्मेसी", "वेलनेस प्रोडक्ट्स", "डायग्नोस्टिक लैब"],
+    "Finance & Insurance": ["बैंकिंग", "बीमा एजेंसी", "फाइनेंस कंसल्टिंग", "माइक्रोफाइनेंस", "टैक्स सर्विस"],
+    "Real Estate & Construction": ["बिल्डर", "एजेंट", "कंस्ट्रक्शन साइट", "इंटीरियर डिज़ाइन", "रियल एस्टेट पोर्टल"],
+    "Travel & Tourism": ["ट्रैवल एजेंसी", "होटल बुकिंग", "गाइड सर्विस", "टूर पैकेज", "कैब सर्विस"],
+    "IT & Software Services": ["वेब डेवलपमेंट", "एप डेवलपमेंट", "सॉफ्टवेयर सपोर्ट", "डिजिटल मार्केटिंग", "AI टूल्स"],
+    "Automobile & Transport": ["कार डीलर", "ट्रक सर्विस", "ऑटो रिपेयर", "टायर शॉप", "ट्रांसपोर्ट एजेंसी"],
+    "Beauty & Personal Care": ["सैलून", "ब्यूटी प्रोडक्ट्स", "मेकअप आर्टिस्ट", "हेयर स्टाइलिंग", "स्किन केयर"],
+    "Entertainment & Media": ["इवेंट शो", "वीडियो प्रोडक्शन", "म्यूजिक स्टूडियो", "डिजिटल मीडिया", "फोटोग्राफी"],
+    "Legal & Consultancy": ["वकील", "कंसल्टेंट", "डॉक्यूमेंटेशन", "नोटरी", "कंपनी रजिस्ट्रेशन"],
+    "Agriculture & Farming": ["खेती", "बीज सप्लाई", "ट्रैक्टर सर्विस", "डेयरी", "ऑर्गेनिक फार्म"],
+    "Textile & Apparel": ["कपड़ा दुकान", "गारमेंट मैन्युफैक्चरिंग", "बुटीक", "फैशन डिजाइन", "हैंडलूम"],
+    "E-commerce & Dropshipping": ["ऑनलाइन स्टोर", "ड्रॉपशिपिंग प्लेटफॉर्म", "प्रोडक्ट लिस्टिंग", "पेमेंट गेटवे", "डिजिटल मार्केट"],
+    "Event Management": ["इवेंट प्लानर", "डेकोरेशन", "लाइटिंग", "साउंड सिस्टम", "स्टेज सेटअप"],
+    "Repair & Maintenance": ["इलेक्ट्रिशियन", "प्लंबर", "AC रिपेयर", "मोबाइल रिपेयर", "कंप्यूटर सर्विस"],
+    "Logistics & Courier": ["कोरियर सर्विस", "पार्सल ट्रैकिंग", "डिलीवरी बॉय", "लॉजिस्टिक कंपनी", "पिकअप सेंटर"],
+    "Home Services": ["साफ-सफाई", "पेस्ट कंट्रोल", "कुक सर्विस", "बाबर्ची", "घर की देखभाल"]
+  };
+
+  const categoryGrid = document.getElementById('categoryGrid');
+
+  Object.keys(categories).forEach((cat, index) => {
+    const div = document.createElement('div');
+    div.className = 'category';
+    div.innerHTML = `
+      <div class="category-icon" style="background-color: ${getColor(index)};">${getIcon(index)}</div>
+      <div class="category-label">${cat}</div>
+    `;
+    div.onclick = () => openModal(cat);
+    categoryGrid.appendChild(div);
+  });
+
+  function openModal(category) {
+    document.getElementById('modalTitle').innerText = category;
+    const list = document.getElementById('subcategoryList');
+    list.innerHTML = '';
+    categories[category].forEach(sub => {
+      const div = document.createElement('div');
+      div.className = 'subcategory';
+      div.innerText = sub;
+      div.onclick = () => alert(`Selected: ${sub}`);
+      list.appendChild(div);
+    });
+    document.getElementById('categoryModal').style.display = 'flex';
+  }
+
+  function closeModal() {
+    document.getElementById('categoryModal').style.display = 'none';
+  }
+
+  function getColor(index) {
+    const colors = ["#f44336", "#e91e63", "#9c27b0", "#3f51b5", "#2196f3", "#009688", "#4caf50", "#ff9800", "#795548", "#607d8b"];
+    return colors[index % colors.length];
+  }
+
+  function getIcon(index) {
+    const icons = ["🛒","⚙️","🍽️","📚","🩺","💰","🏠","✈️","💻","🚗","💄","🎬","⚖️","🌾","👕","📦","🎉","🔧","🚚","🧹"];
+    return icons[index % icons.length];
+  }
+</script>
+
+</body>
+</html>
 
 
 
-  
+    
 <!DOCTYPE html>
 <html lang="hi">
 <head>
