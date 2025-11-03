@@ -342,7 +342,6 @@
         <button style="background:#37474f; color:#fff; border:none; padding:5px 10px; border-radius:5px;">Shop</button>
       </a>
     </div>
-
     <!-- AliExpress -->
     <div style="display:flex; align-items:center; justify-content:space-between; background:#fff; border-radius:10px; padding:10px; border:1px solid #ccc;">      <div style="display:flex; align-items:center; gap:10px;">
         <img src="https://img.icons8.com/color/48/aliexpress.png" width="30">
@@ -365,6 +364,7 @@
     </div>
   </div>
  </div>
+
 
 
 
@@ -579,41 +579,3 @@
       <div class="category-label">${cat}</div>
     `;
     div.onclick = () => openModal(cat);
-    categoryGrid.appendChild(div);
-  });
-
-  function openModal(category) {
-    document.getElementById('modalTitle').innerText = category;
-    const list = document.getElementById('subcategoryList');
-    list.innerHTML = '';
-    categories[category].forEach(sub => {
-      const div = document.createElement('div');
-      div.className = 'subcategory';
-      div.innerText = sub;
-      div.onclick = () => alert(`Selected: ${sub}`);
-      list.appendChild(div);
-    });
-    document.getElementById('categoryModal').style.display = 'flex';
-  }
-
-  function closeModal() {
-    document.getElementById('categoryModal').style.display = 'none';
-  }
-
-  function getColor(index) {
-    const colors = ["#f44336", "#e91e63", "#9c27b0", "#3f51b5", "#2196f3", "#009688", "#4caf50", "#ff9800", "#795548", "#607d8b"];
-    return colors[index % colors.length];
-  }
-
-  function getIcon(index) {
-    const icons = ["🛒","⚙️","🍽️","📚","🩺","💰","🏠","✈️","💻","🚗","💄","🎬","⚖️","🌾","👕","📦","🎉","🔧","🚚","🧹"];
-    return icons[index % icons.length];
-  }
-</script>
-
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-</body>
-</html>
-
-  
-      
