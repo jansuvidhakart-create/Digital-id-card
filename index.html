@@ -367,6 +367,8 @@
 
 
 
+App code 
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -377,7 +379,7 @@
     body {
       font-family: sans-serif;
       margin: 0;
-      background: #ffffff;
+      background: #ffffff; /* ✅ Background white कर दिया */
     }
     h2 {
       text-align: center;
@@ -397,6 +399,7 @@
       width: 64px;
       height: 64px;
       border-radius: 50%;
+      background-color: #2196f3;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -446,61 +449,6 @@
       cursor: pointer;
       font-size: 18px;
     }
-
-    /* ===== Affiliate Section ===== */
-    .affiliate-section {
-      background: #ffffff;
-      margin-top: 40px;
-      padding: 30px 10px;
-      border-top: 3px solid #2196f3;
-    }
-
-    .affiliate-card {
-      max-width: 800px;
-      margin: auto;
-      background: #fff;
-      border-radius: 20px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-      padding: 25px;
-      text-align: center;
-    }
-
-    .affiliate-card h3 {
-      color: #004aad;
-      margin-bottom: 10px;
-    }
-
-    .affiliate-card p {
-      color: #555;
-      margin-bottom: 20px;
-    }
-
-    iframe.affiliate-form {
-      width: 100%;
-      height: 850px;
-      border: none;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    .whatsapp-block {
-      margin-top: 20px;
-      text-align: center;
-    }
-
-    .whatsapp-block a {
-      display: inline-block;
-      background: #25D366;
-      color: white;
-      padding: 12px 28px;
-      border-radius: 8px;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .whatsapp-block a:hover {
-      background: #1DA851;
-    }
   </style>
 </head>
 <body>
@@ -521,8 +469,6 @@
     </div>
   </div>
 </div>
-
-
 
 <script>
   const categories = {
@@ -558,3 +504,67 @@
       <div class="category-label">${cat}</div>
     `;
     div.onclick = () => openModal(cat);
+    categoryGrid.appendChild(div);
+  });
+
+  function openModal(category) {
+    document.getElementById('modalTitle').innerText = category;
+    const list = document.getElementById('subcategoryList');
+    list.innerHTML = '';
+    categories[category].forEach(sub => {
+      const div = document.createElement('div');
+      div.className = 'subcategory';
+      div.innerText = sub;
+      div.onclick = () => alert(`Selected: ${sub}`);
+      list.appendChild(div);
+    });
+    document.getElementById('categoryModal').style.display = 'flex';
+  }
+
+  function closeModal() {
+    document.getElementById('categoryModal').style.display = 'none';
+  }
+
+  function getColor(index) {
+    const colors = ["#f44336", "#e91e63", "#9c27b0", "#3f51b5", "#2196f3", "#009688", "#4caf50", "#ff9800", "#795548", "#607d8b"];
+    return colors[index % colors.length];
+  }
+
+  function getIcon(index) {
+    const icons = ["🛒","⚙️","🍽️","📚","🩺","💰","🏠","✈️","💻","🚗","💄","🎬","⚖️","🌾","👕","📦","🎉","🔧","🚚","🧹"];
+    return icons[index % icons.length];
+  }
+</script>
+
+</body>
+</html>
+
+
+
+<!-- ✅ Footer Payment Section -->
+<div style="text-align:center; font-family:Arial, sans-serif; padding:30px 10px; background:#ffffff; border-top:1px solid #ccc;">
+  <h2 style="color:#2c3e50;">Affiliate Digital ID Card – Create Now</h2>
+  <p style="font-size:16px; color:#555;">अपना डिजिटल ID कार्ड पाने के लिए नीचे "Create Now" पर क्लिक करें और पेमेंट करें।</p>
+
+  <!-- Razorpay Payment Button -->
+  <form>
+    <script src="https://checkout.razorpay.com/v1/payment-button.js"
+            data-payment_button_id="pl_RbG0kBAVMS6Wk5"
+            async>
+    </script>
+  </form>
+
+  <!-- WhatsApp Confirmation Button -->
+  <p style="margin-top:20px; font-size:15px; color:#333;">
+    पेमेंट करने के बाद कृपया अपना स्क्रीनशॉट इस WhatsApp नंबर पर भेजें:
+  </p>
+  <a href="https://wa.me/918847483419?text=मैंने Affiliate Digital ID Card के लिए पेमेंट कर दिया है। कृपया पुष्टि करें।"
+     style="display:inline-block; background-color:#25D366; color:white; padding:10px 20px; border-radius:5px; text-decoration:none; font-weight:bold;">
+    📲 WhatsApp Screenshot भेजें
+  </a>
+</div>
+
+
+
+
+  
